@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 let broadcaster;
-const port = 4000;
+const PORT = 4000;
 
 const http = require("http");
 const server = http.createServer(app);
@@ -51,5 +51,7 @@ io.sockets.on("connection", socket => {
 
 });
 
+
+const port = process.env.PORT || PORT;
 
 server.listen(port, () => console.log(`Server is running on port ${port}`));
